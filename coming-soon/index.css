@@ -1,0 +1,63 @@
+@font-face{
+    src: url(CircularStd-Medium.otf);
+    font-family: CircularStd;
+}
+body{
+  background: url(joshua-bartell-6vvIBTvL90A-unsplash\ 1.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-color: #000000;
+  background-position: center;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+  }
+  #wash{
+    font-family: CircularStd;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 46px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0%;
+  }
+  #soYou{
+    font-family: CircularStd;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 81px;    
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0%;
+  }
+  #loopHands{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+  #safe{
+    font-family: CircularStd;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0%;
+  }
+  #home{
+    font-family: CircularStd;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 33px;    
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0%;
+  }
