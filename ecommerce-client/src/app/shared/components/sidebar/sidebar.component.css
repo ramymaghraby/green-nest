@@ -1,6 +1,5 @@
 /* The sidebar menu */
 .sidenav {
-  height: 50%; /* Full-height: remove this if you want "auto" height */
   width: 285px; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
@@ -34,4 +33,13 @@
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+
+#AllCat{
+  font-family: Circular Std;
+  font-style: normal;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+  color: #A3A3A3;
 }
