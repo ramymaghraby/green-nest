@@ -12,4 +12,10 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
   ],
   exports: [NavbarComponent, SidebarComponent]
 })
-export class SharedModule { }
+export class SharedModule {
+  static forRoot() {
+    return {
+      NgModule: SharedModule
+    };
+  }
+}
