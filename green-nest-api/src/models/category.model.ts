@@ -1,6 +1,7 @@
-import {Entity, hasMany, model, property} from '@loopback/repository';
+import {Entity, hasMany, model, property, belongsTo} from '@loopback/repository';
 import {Product, ProductWithRelations} from './product.model';
 import {SubCategory, SubCategoryWithRelations} from './sub-category.model';
+import {MainCategory} from './main-category.model';
 
 @model({
   settings: {
@@ -50,23 +51,14 @@ export class Category extends Entity {
     },
   })
   description?: string;
-
-  @property({
-    type: 'number',
-    mysql: {
-      columnName: 'mainCategoryId',
-      dataType: 'INT',
-      dataLength: 10,
-      nullable: 'N',
-    },
-  })
-  mainCategoryId?: number;
-
   @hasMany(() => SubCategory)
   subCategories: SubCategory[];
 
   @hasMany(() => Product)
   products: Product[];
+
+  @belongsTo(() => MainCategory)
+  mainCategoryId: number;
 
   constructor(data?: Partial<Category>) {
     super(data);

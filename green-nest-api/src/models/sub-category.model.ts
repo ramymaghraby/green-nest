@@ -1,5 +1,6 @@
-import {Entity, hasMany, model, property} from '@loopback/repository';
+import {Entity, hasMany, model, property, belongsTo} from '@loopback/repository';
 import {Product, ProductWithRelations} from './product.model';
+import {Category} from './category.model';
 
 @model({
   settings: {
@@ -31,14 +32,11 @@ export class SubCategory extends Entity {
     type: 'string',
   })
   description?: string;
-
-  @property({
-    type: 'number',
-  })
-  categoryId?: number;
-
   @hasMany(() => Product)
   products: Product[];
+
+  @belongsTo(() => Category)
+  categoryId: number;
 
   constructor(data?: Partial<SubCategory>) {
     super(data);

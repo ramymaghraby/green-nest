@@ -1,9 +1,11 @@
-import {Entity, hasMany, model, property} from '@loopback/repository';
+import {Entity, hasMany, model, property, belongsTo} from '@loopback/repository';
 import {OrderDetails, OrderDetailsWithRelations} from './order-details.model';
 import {
   ProductReview,
   ProductReviewWithRelations,
 } from './product-review.model';
+import {Category} from './category.model';
+import {SubCategory} from './sub-category.model';
 
 @model({
   settings: {
@@ -52,22 +54,17 @@ export class Product extends Entity {
     type: 'buffer',
   })
   imgUrl?: Buffer;
-
-  @property({
-    type: 'number',
-  })
-  categoryId?: number;
-
-  @property({
-    type: 'number',
-  })
-  subCategoryId?: number;
-
   @hasMany(() => ProductReview)
   productReviews: ProductReview[];
 
   @hasMany(() => OrderDetails)
   orderDetails: OrderDetails[];
+
+  @belongsTo(() => Category)
+  categoryId: number;
+
+  @belongsTo(() => SubCategory)
+  subCategoryId: number;
 
   constructor(data?: Partial<Product>) {
     super(data);
