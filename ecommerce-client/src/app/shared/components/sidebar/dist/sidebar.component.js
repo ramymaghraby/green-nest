@@ -20,11 +20,16 @@ var SidebarComponent = /** @class */ (function () {
         this.CategoriesSrv.getCategories().subscribe(function (Cat) {
             _this.Categories = Cat;
             _this.Categories.forEach(function (category) {
+                category.isCollapsed = true;
                 _this.checkSubCategory(category);
             });
         });
     };
     SidebarComponent.prototype.getThisCategory = function (category) {
+        if (category.isCollapsed) {
+            this.Categories.forEach(function (cat) { return cat.isCollapsed = true; });
+        }
+        category.isCollapsed = !category.isCollapsed;
         this.selectClass = 'selected';
         this.changeCategoryClass(category);
         this.checkSubCategory(category);

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CategoriesModel } from 'src/app/models/category.model';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { SubCategoriesModel } from 'src/app/models/sub-category.model';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 declare var $: any;
 
@@ -14,8 +15,10 @@ declare var $: any;
 
 
 export class SidebarComponent implements OnInit {
+
 Categories: CategoriesModel[];
 selectClass: string;
+
   constructor(
     public router: Router,
     private CategoriesSrv: CategoriesService
@@ -29,11 +32,16 @@ selectClass: string;
     this.CategoriesSrv.getCategories().subscribe((Cat: CategoriesModel[]) => {
       this.Categories = Cat;
       this.Categories.forEach((category: CategoriesModel) => {
+        category.isCollapsed = true;
         this.checkSubCategory(category);
       });
     });
   }
   getThisCategory(category: CategoriesModel) {
+    if (category.isCollapsed) {
+      this.Categories.forEach(cat => cat.isCollapsed = true);
+    }
+    category.isCollapsed = !category.isCollapsed;
     this.selectClass = 'selected';
     this.changeCategoryClass(category);
     this.checkSubCategory(category);

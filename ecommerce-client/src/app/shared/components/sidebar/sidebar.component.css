@@ -70,4 +70,7 @@ ul{
   font-size: 15px;
   font-weight: bold;
 }
+.subItemSelected a:before{
+  content: "| ";
+}
 

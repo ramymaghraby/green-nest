@@ -2,31 +2,23 @@
 <div class="sidenav">
   <h5 id="AllCat">ALL CATEGORIES</h5>
   <ul>
-    <li><a href="#">BEDROOMS</a></li>
-    <li><a class="selected" href="#">CHAIRS</a>
-      <div class="subItems">
-        <ul>
-          <li><a href="#">Manager Chairs</a></li>
-          <li class="subItemSelected"><a>Study Chairs</a></li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-  <ul>
     <li *ngFor="let category of Categories; let i = index">
       <!-- if have no sub categories -->
       <a class="{{category.class}}" (click)="getThisCategory(category)" *ngIf="!category.subCatStatus">
         {{category.name | uppercase}}
       </a>
       <!-- if have sub categories -->
-      <a data-toggle="collapse" class="{{category.class}}" (click)="getThisCategory(category)" *ngIf="category.subCatStatus">
+      <a class="{{category.class}}" (click)="getThisCategory(category)" [attr.aria-expanded]="!category.isCollapsed"
+        attr.aria-controls="collapseBasic.{{category.name}}" *ngIf="category.subCatStatus">
         {{category.name | uppercase}}
       </a>
       <!--Display the submenu items-->
-      <div class="subItems" *ngIf="category.subCatStatus">
+      <div id="collapseBasic.{{category.name}}" [collapse]="category.isCollapsed" class="subItems"
+        *ngIf="category.subCatStatus" [isAnimated]="true">
+
         <ul>
           <li class="{{subCategory.class}}" *ngFor="let subCategory of category.subCategories">
-            <a  (click)="getSubCategories(subCategory)" href="#">{{subCategory.name}}</a></li>
+            <a (click)="getSubCategories(subCategory)" href="#">{{subCategory.name}}</a></li>
         </ul>
       </div>
     </li>

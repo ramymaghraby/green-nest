@@ -9,4 +9,5 @@ export class CategoriesModel {
   subCategories: SubCategoriesModel[];
   class: string;
   subCatStatus: boolean;
+  isCollapsed: boolean;
 }
