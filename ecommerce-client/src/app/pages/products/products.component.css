@@ -1,0 +1,14 @@
+.card{
+  left: 419px;
+  top: 200px;
+  border-style: none;
+}
+.card-header{
+  background: none;
+  color: #2D2D2D;
+  font-family: Circular Std Medium;
+  font-size: 27px;
+  width: fit-content;
+}
+
+

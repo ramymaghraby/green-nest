@@ -7,6 +7,9 @@
 }
 #logo{
   position: absolute;
-  left: 126px;
-  top: 19px;
+  left: 7.9rem;
+  top: 1.19rem;
+}
+#subMenu{
+  padding-left: 50%;
 }

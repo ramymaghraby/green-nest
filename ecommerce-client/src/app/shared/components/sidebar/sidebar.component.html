@@ -12,4 +12,24 @@
       </div>
     </li>
   </ul>
+  <ul>
+    <li *ngFor="let category of Categories; let i = index">
+      <!-- if have no sub categories -->
+      <a class="{{category.class}}" (click)="getThisCategory(category)" *ngIf="!category.subCatStatus">
+        {{category.name | uppercase}}
+      </a>
+      <!-- if have sub categories -->
+      <a data-toggle="collapse" class="{{category.class}}" (click)="getThisCategory(category)" *ngIf="category.subCatStatus">
+        {{category.name | uppercase}}
+      </a>
+      <!--Display the submenu items-->
+      <div class="subItems" *ngIf="category.subCatStatus">
+        <ul>
+          <li class="{{subCategory.class}}" *ngFor="let subCategory of category.subCategories">
+            <a  (click)="getSubCategories(subCategory)" href="#">{{subCategory.name}}</a></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+
 </div>
