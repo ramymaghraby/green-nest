@@ -3,9 +3,7 @@ import { Router } from '@angular/router';
 import { CategoriesModel } from 'src/app/models/category.model';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { SubCategoriesModel } from 'src/app/models/sub-category.model';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
-declare var $: any;
 
 @Component({
   selector: 'app-sidebar',

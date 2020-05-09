@@ -12,6 +12,8 @@ var common_1 = require("@angular/common");
 var navbar_component_1 = require("./components/navbar/navbar.component");
 var sidebar_component_1 = require("./components/sidebar/sidebar.component");
 var collapse_1 = require("ngx-bootstrap/collapse");
+var ng_select_1 = require("@ng-select/ng-select");
+var forms_1 = require("@angular/forms");
 var SharedModule = /** @class */ (function () {
     function SharedModule() {
     }
@@ -29,6 +31,8 @@ var SharedModule = /** @class */ (function () {
                 common_1.CommonModule,
                 animations_1.BrowserAnimationsModule,
                 collapse_1.CollapseModule.forRoot(),
+                ng_select_1.NgSelectModule,
+                forms_1.FormsModule
             ],
             exports: [navbar_component_1.NavbarComponent, sidebar_component_1.SidebarComponent]
         })

@@ -1,6 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(//db.onlinewebfonts.com/c/9475d6a0b79c164f9f605673714e75d9?family=Circular+Std+Medium);
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
 @font-face {
   font-family: "Circular Std Medium";
   src: url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.eot");
   src: url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.woff") format("woff"), url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.svg#Circular Std Medium") format("svg"); }
+
+.content {
+  padding-left: 26.2rem;
+  padding-top: 20rem;
+  min-height: calc(100vh - 70px);
+}
+.card{
+  z-index: -1;
+}

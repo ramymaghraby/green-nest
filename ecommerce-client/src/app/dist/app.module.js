@@ -12,6 +12,7 @@ var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
 var pages_module_1 = require("./pages/pages.module");
 var http_1 = require("@angular/common/http");
+var shared_module_1 = require("./shared/shared.module");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -22,6 +23,7 @@ var AppModule = /** @class */ (function () {
                 http_1.HttpClientModule,
                 app_routing_module_1.AppRoutingModule,
                 pages_module_1.PagesModule,
+                shared_module_1.SharedModule
             ],
             declarations: [
                 app_component_1.AppComponent
